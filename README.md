@@ -1,2 +1,2 @@
 # Darey.IO-PBL
-All my dare.io projects
+All my darey.io projects
