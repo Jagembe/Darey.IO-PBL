@@ -505,6 +505,8 @@ let { todos } = this.state;
 }
 
 export default Todo;
+```
+
 
 Cd'd into the 'src' directory and ran the following code to open the App.js file:
 
@@ -656,6 +658,5 @@ Output of browser result:
 ![screenshot](https://user-images.githubusercontent.com/58337007/150061129-3da45882-5879-4aef-ae65-2a7caaf736a8.png)
 
 Simple Todo App created and deployed in MERN stack, wrote a frontend application using React.js that communicates with a backend application written using Expressjs. I also created a Mongodb backend for storing tasks in a database.
-
 
 
