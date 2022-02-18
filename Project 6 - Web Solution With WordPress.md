@@ -72,7 +72,7 @@ Output of the above command:
 
 7. Used the pvcreate cmdlet to mark each of the 3 disks as physical volumes (PVs) to be used by LVM
 
-`udo pvcreate /dev/xvdf1`
+`sudo pvcreate /dev/xvdf1`
 
 `sudo pvcreate /dev/xvdg1`
 
