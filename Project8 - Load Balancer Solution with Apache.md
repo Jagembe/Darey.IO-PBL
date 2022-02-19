@@ -95,7 +95,29 @@ sudo systemctl restart apache2
  The number of requests to each server will be approximately the same since we set loadfactor to the same value for both servers – it means that traffic will be disctributed evenly between them.                                                                                             
   
   ![image](https://user-images.githubusercontent.com/58337007/154787005-b1e0d210-8ea5-43b3-bbb4-99c31e6f0101.png)
+                                                                                              
+  Users cannot even notice that their requests are served by more than one server.
+                                                                                              
+  # Optional Step
+                                                                                     
+  Configured local domain name resolution using '/etc/hosts' file (even though not a scalable approach) but shows the concept:
+                                                                                              
+  Updated the LB config file with the names of the IP addresses:
+                                                                                              
+ ```
+BalancerMember http://Web1:80 loadfactor=5 timeout=1
+BalancerMember http://Web2:80 loadfactor=5 timeout=1
+```
+                                                                                              
+Used 'curl' utility to to assign non-resolvable' names to internl configurations local to the LB Server.
+    
+![image](https://user-images.githubusercontent.com/58337007/154788471-b66342aa-1141-4d8a-93cf-20a4ffc2644f.png)
   
+![image](https://user-images.githubusercontent.com/58337007/154788505-6acdd811-47ec-4268-b69a-7454d59eb538.png)
+  
+Load Balancing Web Solution has been implemented.
+    
+
                                                                                              
                                                                                               
                                                                                               
