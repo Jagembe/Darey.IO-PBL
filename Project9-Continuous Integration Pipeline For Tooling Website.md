@@ -96,17 +96,14 @@ Made some changes to the "README" file in the tooling GitHub repository and push
 ![image](https://user-images.githubusercontent.com/58337007/154817881-3c7f54a3-b13a-4b59-bd38-4bbb71e26870.png)
 ![image](https://user-images.githubusercontent.com/58337007/154817978-4ea8026e-9a49-4a2b-8b24-5ed2a186e740.png)
 
-Checked Jenkins and saw that a second build was automatically triggered.
-![image](https://user-images.githubusercontent.com/58337007/154818040-d0365591-1569-4dcc-9703-2fadb3476993.png)
-![image](https://user-images.githubusercontent.com/58337007/154818112-bb75ad6d-4a2a-4d2a-a2f5-598ec61394cc.png)
-![image](https://user-images.githubusercontent.com/58337007/154818226-095365bf-7823-42ae-b574-ffc9f24a8354.png)
+Checked Jenkins and saw that a third build was automatically triggered.
+![image](https://user-images.githubusercontent.com/58337007/158026243-fb2ec173-5993-4c7f-938f-a9c50b515b6b.png)
 
 I have now configured an automated Jenkins job that receives files from GitHub by webhook trigger (this method is considered as ‘push’ because the changes are being ‘pushed’ and files transfer is initiated by GitHub). There are also other methods: trigger one job (downstreadm) from another (upstream), poll GitHub periodically and others.
 By default, the artifacts are stored on Jenkins server locally and can be accessed using the cmdlet below:
 
 `ls /var/lib/jenkins/jobs/project9/builds/2/archive/`
-![image](https://user-images.githubusercontent.com/58337007/154818893-7ff94567-57d3-47ad-a6e8-cbf98224b9cb.png)
-
+![image](https://user-images.githubusercontent.com/58337007/158026792-838c27f6-bfdf-465b-9e11-0be122307c3b.png)
 
 
 ##### Step 3 - Configured Jenkins to copy files to NFS server via SSH
@@ -121,10 +118,23 @@ Navigated to the Jenkins dashboard and selected "Manage Jenkins" from the menu.
 
 Selected "Manage Plugins" from the menu.
 ![image](https://user-images.githubusercontent.com/58337007/154819087-1f280b0d-8809-476b-9f09-a9f78b1a78b6.png)
-The "Publish Over SSH" plugin was deprecated due to security issues, so I selected Artifact Manager on S3 plugin for this project.
-![image](https://user-images.githubusercontent.com/58337007/154831456-1cf13914-7a92-48d8-ab5c-e4f48f3bdc51.png)
 
-2. ### The plugin has been suspended due to security reasons... this portion of the project is suspended until a different solution can be arrived at.
+From the Plugin Manager page, I searched for 'Publish Over SSH' on the Available Tab and installed the plugin as follows:
+![image](https://user-images.githubusercontent.com/58337007/158029552-90a9e27e-7f83-4670-8912-b5d97512ed8e.png)
+![image](https://user-images.githubusercontent.com/58337007/158029576-fa0bf1ae-706e-41d4-b4db-111c50e70e22.png)
+![image](https://user-images.githubusercontent.com/58337007/158029607-fb51b7ed-7eaa-49db-a64d-039a31e0b1db.png)
+
+2. ### Configured the job/project to copy artifacts over to NFS server as follows:
+
+On main dashboard selected "Manage Jenkins" and chose "Configure System" menu item
+![image](https://user-images.githubusercontent.com/58337007/158029852-f1aab24b-5d1d-453f-afd5-30f99d76807d.png)
+
+On multiple occasions tried to connect Jenkins Server to the NFS Server but always got errors related to the plugin and key format:
+![image](https://user-images.githubusercontent.com/58337007/158030711-dc338f38-e6ea-41b8-8d54-003391e7c090.png)
+![image](https://user-images.githubusercontent.com/58337007/158031427-a8839c44-0bc5-4d6e-9c18-39e0ab0509b3.png)
+
+
+Skipping this portion of the project until the plugin gets to be updated.
 
 
 
