@@ -205,12 +205,19 @@ Opened a folder on (home directory) on VSCode
 ![image](https://user-images.githubusercontent.com/58337007/158943008-0f8ac096-02c1-4859-be55-723d53128a97.png)
 ![image](https://user-images.githubusercontent.com/58337007/158943102-d6a89fea-1034-4c45-8e03-30eefd5dc89d.png)
 
-
-ansible-playbook -i /var/lib/jenkins/jobs/ansible/builds/<build-number>/archive/inventory/dev.yml /var/lib/jenkins/jobs/ansible/builds/<build-number>/archive/playbooks/common.yml
+`ansible-playbook -i /var/lib/jenkins/jobs/ansible/builds/7/archive/inventory/dev.yml /var/lib/jenkins/jobs/ansible/builds/7/archive/playbooks/common.yml`
+![image](https://user-images.githubusercontent.com/58337007/159839281-2342080a-9d8b-4841-8a40-cd6f60d014f7.png)
 
 Note: Previous command we ran without sudo, this is because we had added an ssh key to ssh-agent for our regular user. If you try to run this command with sudo you will have to explicitly pass the ssh key with --private-key <path-to-private-key> parameter.
 
 You can go to each of the servers and check if wireshark has been installed by running which wireshark or wireshark --version
 
+ Connected (via ssh) to webserver 1 (RHEL):
+![image](https://user-images.githubusercontent.com/58337007/159839403-59d506f2-d53f-4f0a-be01-a19bb4bbe554.png)
+ 
+ Connected (via ssh) to load balancer (ubuntu):
+ ![image](https://user-images.githubusercontent.com/58337007/159839796-985a4534-8f21-4c7e-b9f3-4a7fd812a854.png)
+
+ 
 
 
