@@ -216,7 +216,17 @@ You can go to each of the servers and check if wireshark has been installed by r
 ![image](https://user-images.githubusercontent.com/58337007/159839403-59d506f2-d53f-4f0a-be01-a19bb4bbe554.png)
  
  Connected (via ssh) to load balancer (ubuntu):
- ![image](https://user-images.githubusercontent.com/58337007/159839796-985a4534-8f21-4c7e-b9f3-4a7fd812a854.png)
+![image](https://user-images.githubusercontent.com/58337007/159839796-985a4534-8f21-4c7e-b9f3-4a7fd812a854.png)
+ 
+Ran ansible playbook with updated tasks as follows:
+`ansible-playbook -i /var/lib/jenkins/jobs/ansible/builds/18/archive/inventory/dev.yml /var/lib/jenkins/jobs/ansible/builds/18/archive/playbooks/common.yml`
+ 
+ ![image](https://user-images.githubusercontent.com/58337007/160120867-1424090f-505d-4bce-b72e-0edbcba05732.png)
+ 
+![image](https://user-images.githubusercontent.com/58337007/160121029-46dcaa1b-0fc4-4d34-be79-781d823af7db.png)
+
+ 
+ 
 
  
 
